@@ -5,7 +5,6 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './side-nav.css';
 import Home from './containers/Home.js';
 import Tour from './containers/Tour.js';
-import Page from './containers/Page.js';
 
 
 export default class App extends React.Component {
@@ -17,20 +16,6 @@ export default class App extends React.Component {
       size: 'small'
     };
   }
-
-  handleChange = (e) => {
-    // if(e === "home"){
-    //   this.setState({
-    //     value: <Home />
-    //   });
-    // }
-    // else if(e === "tour"){
-    //   this.setState({
-    //     value: <Tour />
-    //   });
-    // }
-
-  };
 
   toggleSidebar = () => {
     if (this.state.size === 'small') {
@@ -77,7 +62,7 @@ export default class App extends React.Component {
                     <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
                   </NavIcon>
                   <NavText>
-                    Charts
+                    Tour
                   </NavText>
                 </NavItem>
               </SideNav.Nav>

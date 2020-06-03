@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import './Home.css';
-import Page from './Page.js';
 
-class Home extends Page {
+class Home extends Component {
 
     constructor(props){
         super(props);
