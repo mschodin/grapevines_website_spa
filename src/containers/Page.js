@@ -4,7 +4,10 @@ class Page extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = { page: 'Home' }
+        this.state = { 
+            size: "32px",
+            page: 'Home'
+        }
     }
 
     updateMargin = () => {
@@ -14,9 +17,13 @@ class Page extends React.Component {
     }
 
     render(){
+        let styles = {
+            // marginLeft: this.props.margin
+            marginLeft: this.state.size
+        }
         return(
-            <div>
-                <Home />
+            <div style={styles}>
+                <h1>You are home</h1>
             </div>
         );
     }

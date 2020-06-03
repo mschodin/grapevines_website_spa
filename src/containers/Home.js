@@ -1,26 +1,18 @@
 import React, { Component } from "react";
 import './Home.css';
+import Page from './Page.js';
 
-class Home extends React.Component {
+class Home extends Page {
 
     constructor(props){
         super(props);
-        this.state = { size: '32px' }
-    }
-
-    updateMargin = () => {
-        this.setState({
-            size: '300px'
-        });
+        this.state = {  }
     }
 
     render(){
-        let styles = {
-            // marginLeft: this.props.margin
-            marginLeft: this.state.size
-        }
+        
         return(
-            <div style={styles}>
+            <div>
                 <h1>You are home</h1>
             </div>
         );
