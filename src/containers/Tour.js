@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-class Home extends React.Component {
+class Tour extends React.Component {
     render(){
         return(
-            <h1>You are home</h1>
+            <h1>TOURTOURTOUR</h1>
         );
     }
 }
 
-export default Home;
+export default Tour;
