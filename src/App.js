@@ -65,6 +65,30 @@ export default class App extends React.Component {
                     Tour
                   </NavText>
                 </NavItem>
+                <NavItem eventKey="listen">
+                  <NavIcon>
+                    <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                  </NavIcon>
+                  <NavText>
+                    Listen
+                  </NavText>
+                </NavItem>
+                <NavItem eventKey="media">
+                  <NavIcon>
+                    <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                  </NavIcon>
+                  <NavText>
+                    Media
+                  </NavText>
+                </NavItem>
+                <NavItem eventKey="contact">
+                  <NavIcon>
+                    <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                  </NavIcon>
+                  <NavText>
+                    Contact
+                  </NavText>
+                </NavItem>
               </SideNav.Nav>
             </SideNav>
 
