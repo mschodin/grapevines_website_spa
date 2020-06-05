@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './side-nav.css';
 import Home from './containers/Home.js';
 import Tour from './containers/Tour.js';
 
 
-export default class App extends React.Component {
+export default class App extends Component {
 
   constructor(props) {
     super(props);
@@ -56,7 +56,7 @@ export default class App extends React.Component {
               <SideNav.Nav defaultSelected="home">
                 <NavItem eventKey="">
                   <NavIcon>
-                    <img src={require('./media/home.png')} style={navIcon}/>
+                    <img src={require('./media/home.png')} style={navIcon} alt='homeimg'/>
                   </NavIcon>
                   <NavText style={{ fontSize: '1.75em' }}>
                     Home
@@ -64,7 +64,7 @@ export default class App extends React.Component {
                 </NavItem>
                 <NavItem eventKey="tour">
                   <NavIcon>
-                    <img src={require('./media/next.png')} style={navIcon}/>
+                    <img src={require('./media/next.png')} style={navIcon} alt='tourimg'/>
                   </NavIcon>
                   <NavText style={{ fontSize: '1.75em' }}>
                     Tour
@@ -72,7 +72,7 @@ export default class App extends React.Component {
                 </NavItem>
                 <NavItem eventKey="listen">
                   <NavIcon>
-                    <img src={require('./media/volume.png')} style={navIcon}/>
+                    <img src={require('./media/volume.png')} style={navIcon} alt='listenimg'/>
                   </NavIcon>
                   <NavText style={{ fontSize: '1.75em' }}>
                     Listen
@@ -80,7 +80,7 @@ export default class App extends React.Component {
                 </NavItem>
                 <NavItem eventKey="media">
                   <NavIcon>
-                    <img src={require('./media/photo-camera.png')} style={navIcon}/>
+                    <img src={require('./media/photo-camera.png')} style={navIcon} alt='mediaimg'/>
                   </NavIcon>
                   <NavText style={{ fontSize: '1.75em' }}>
                     Media
@@ -88,7 +88,7 @@ export default class App extends React.Component {
                 </NavItem>
                 <NavItem eventKey="contact">
                   <NavIcon>
-                    <img src={require('./media/email.png')} style={navIcon}/>
+                    <img src={require('./media/email.png')} style={navIcon} alt='contactimg'/>
                   </NavIcon>
                   <NavText style={{ fontSize: '1.75em' }}>
                     Contact

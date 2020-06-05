@@ -1,0 +1,53 @@
+div.date{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    padding-left: 5px;
+    text-rendering: optimizeLegibility;
+    display: block;
+}
+
+div.showname{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    padding-left: 5px;
+    padding-top: 10px;
+    text-rendering: optimizeLegibility;
+    display: inline-block;
+}
+
+div.city{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    text-rendering: optimizeLegibility;
+    display: inline-block;
+    padding-left: 30%;
+    font-style: italic;
+}
+
+button.showpage{
+    color: #fff;
+    background-color: #64428f;
+    border-color: #007bff;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    margin-top: 11px;
+}
+button:hover{
+    background-color: darkorchid;
+}
+
+div.button{
+    display: inline-block;
+    position: absolute;
+    padding-top: 10px;
+}
