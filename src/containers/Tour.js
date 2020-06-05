@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Show from './Show.js';
+import './Tour.css';
+import { SocialIcon } from 'react-social-icons';
 
 class Tour extends Component {
 
@@ -71,9 +73,19 @@ class Tour extends Component {
             borderBottomRightRadius: '10px',
             borderBottomLeftRadius: '10px'
         }
+        const icons = {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }
+          const iconsChild = {
+            margin: '5px'
+          }
         return(
             <div>
-                <h1>TOURTOURTOUR</h1>
+                &nbsp;
+                <div className="tour">TOURTOURTOUR</div>
+                &nbsp;
                 <div className="shows">
                     <div style={firstshow}>
                         <Show date="August 6, 2020" name="Gabe's" location="Iowa City, Iowa" handle={this.show1} right={(this.state.width - (this.state.width * 0.4))/2 - 20} />
@@ -87,6 +99,14 @@ class Tour extends Component {
                     <div style={lastshow}>
                         <Show date="September 30, 2020" name="The Trap Kitchen" location="Iowa City, Iowa" handle={this.show2} right={(this.state.width - (this.state.width * 0.4))/2 - 20} />
                     </div>
+                </div>
+                &nbsp;
+                <div style={icons}>
+                  <SocialIcon url="https://www.instagram.com/thegrapevinesband/" style={iconsChild}/>
+                  <SocialIcon url="https://open.spotify.com/artist/0BnrW8h4tlt3zu0yEaew9Y" style={iconsChild}/>
+                  <SocialIcon url="https://www.facebook.com/thegrapevineguy/" style={iconsChild}/>
+                  <SocialIcon url="https://twitter.com/thegrapevines_?lang=en" style={iconsChild}/>
+                  <SocialIcon url="https://thegrapevines.bandcamp.com/" style={iconsChild}/>
                 </div>
             </div>
         );
