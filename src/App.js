@@ -31,6 +31,12 @@ export default class App extends React.Component {
   }
 
   render() {
+    const navIcon = {
+      width: '40px',
+      height: '40px',
+      marginTop: '5px',
+      color: 'white'
+    }
     return (
       <Router>
         <Route render={({ location, history }) => (
@@ -50,42 +56,41 @@ export default class App extends React.Component {
               <SideNav.Nav defaultSelected="home">
                 <NavItem eventKey="">
                   <NavIcon>
-                  <img src="https://img.icons8.com/ios/50/000000/home-page.png"/>
-                    {/* <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} /> */}
+                    <img src={require('./media/home.png')} style={navIcon}/>
                   </NavIcon>
-                  <NavText>
+                  <NavText style={{ fontSize: '1.75em' }}>
                     Home
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="tour">
                   <NavIcon>
-                    <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                    <img src={require('./media/next.png')} style={navIcon}/>
                   </NavIcon>
-                  <NavText>
+                  <NavText style={{ fontSize: '1.75em' }}>
                     Tour
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="listen">
                   <NavIcon>
-                    <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                    <img src={require('./media/volume.png')} style={navIcon}/>
                   </NavIcon>
-                  <NavText>
+                  <NavText style={{ fontSize: '1.75em' }}>
                     Listen
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="media">
                   <NavIcon>
-                    <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                    <img src={require('./media/photo-camera.png')} style={navIcon}/>
                   </NavIcon>
-                  <NavText>
+                  <NavText style={{ fontSize: '1.75em' }}>
                     Media
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="contact">
                   <NavIcon>
-                    <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                    <img src={require('./media/email.png')} style={navIcon}/>
                   </NavIcon>
-                  <NavText>
+                  <NavText style={{ fontSize: '1.75em' }}>
                     Contact
                   </NavText>
                 </NavItem>
