@@ -5,6 +5,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './side-nav.css';
 import Home from './containers/Home.js';
 import Tour from './containers/Tour.js';
+import Listen from './containers/Listen.js';
 
 
 export default class App extends Component {
@@ -101,6 +102,7 @@ export default class App extends Component {
               <Switch>
                 <Route path="/" exact component={props => <Home />} />
                 <Route path="/tour" component={props => <Tour />} />
+                <Route path="/listen" component={props => <Listen />} />
               </Switch>
             </div>
           </React.Fragment>
