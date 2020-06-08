@@ -34,7 +34,7 @@ class Home extends Component {
       }
         return(
             <div>
-                &nbsp;
+                {/* &nbsp; */}
                 <img src={require('../media/Grapevines-logo-cropped.jpg')} width={this.state.width * 0.4} alt='logo' />
                 &nbsp;
                 <iframe title='SofarVideo' width={this.state.width * 0.4} height={this.state.width * 0.4 * (9/16)} src="https://www.youtube.com/embed/kRQT1_1fWlA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
