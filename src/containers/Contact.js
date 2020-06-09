@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import "./Contact.css";
+import Amplify, { API } from 'aws-amplify';
+import awsconfig from '../aws-exports';
 
 class Contact extends Component {
 
@@ -12,7 +14,17 @@ class Contact extends Component {
         };
     }
 
+
+
+    apiName = 'dev';
+    path = '/backend';
+    myInit = {
+        headers: {},
+        response: true
+    }
+
     submitContact = (event) => {
+        event.preventDefault();
         if (this.state.name.length > 0 && this.state.email.length > 0 && this.state.message.length > 0) {
             // fetch('/backend', {
             //     method: 'POST',
@@ -49,31 +61,40 @@ class Contact extends Component {
 
 
 
-            fetch('/backend', {
-                method: 'GET',
-            })
-                .then(res => {
-                    return res.json();
-                })
-                .then(items => {
-                    alert(items.success)
-                })
-                .catch(err => {
-                    console.log("/backend didnt work")
-                });
+            // fetch('/backend', {
+            //     method: 'GET',
+            // })
+            //     .then(res => {
+            //         return res.json();
+            //     })
+            //     .then(items => {
+            //         alert(items.success)
+            //     })
+            //     .catch(err => {
+            //         console.log("/backend didnt work")
+            //     });
 
-            fetch('https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev/backend', {
-                method: 'GET',
+            // fetch('https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev/backend', {
+            //     method: 'GET',
+            // })
+            //     .then(res => {
+            //         return res.json();
+            //     })
+            //     .then(items => {
+            //         alert(items.success)
+            //     })
+            //     .catch(err => {
+            //         console.log("https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev/backend didnt work")
+            //     });
+
+            API.get(this.apiName, this.path, this.myInit).then(response => {
+                console.log("in first THEN statement");
+                return response.json();
             })
-                .then(res => {
-                    return res.json();
-                })
-                .then(items => {
-                    alert(items.success)
-                })
-                .catch(err => {
-                    console.log("https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev/backend didnt work")
-                });
+            .then(items => {
+                console.log("in second THEN statement");
+                alert(items.success);
+            })
 
 
         }

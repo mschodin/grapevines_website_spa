@@ -8,14 +8,18 @@ import Home from './containers/Home';
 import Listen from './containers/Listen';
 import Media from './containers/Media';
 import Contact from './containers/Contact';
+import Amplify, { API } from 'aws-amplify';
+import awsconfig from './aws-exports';
 
 class SPA extends Component {
+
     render() {
         var homepage = <Home />;
         var tourpage = <Tour />;
         var listenpage = <Listen />;
         var mediapage = <Media />;
         var contactpage = <Contact />;
+        Amplify.configure(awsconfig);
     return (
       <div className="App">
         <Navbar />
