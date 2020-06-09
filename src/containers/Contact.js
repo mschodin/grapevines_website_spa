@@ -51,7 +51,6 @@ class Contact extends Component {
 
             fetch('/backend', {
                 method: 'GET',
-                credentials: 'include',
             })
                 .then(res => {
                     return res.json();
@@ -60,7 +59,20 @@ class Contact extends Component {
                     alert(items.success)
                 })
                 .catch(err => {
-                    alert("Error submitting donation requests");
+                    console.log("/backend didnt work")
+                });
+
+            fetch('https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev/backend', {
+                method: 'GET',
+            })
+                .then(res => {
+                    return res.json();
+                })
+                .then(items => {
+                    alert(items.success)
+                })
+                .catch(err => {
+                    console.log("https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev/backend didnt work")
                 });
 
 
