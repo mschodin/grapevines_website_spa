@@ -14,12 +14,15 @@ class Contact extends Component {
         };
     }
 
-
+    
 
     apiName = 'restapi';
     path = '/backend';
     myInit = {
-        headers: {},
+        headers: {
+            Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
         response: true
     }
 
@@ -97,6 +100,7 @@ class Contact extends Component {
             })
             .catch(err => {
                 console.log(err);
+                console.error(err);
             });
 
 
@@ -107,6 +111,7 @@ class Contact extends Component {
     }
 
     render() {
+        Amplify.configure(awsconfig);
         return (
             <div>
                 <form onSubmit={this.submitContact} className="contact">
