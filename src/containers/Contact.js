@@ -16,7 +16,7 @@ class Contact extends Component {
 
 
 
-    apiName = 'dev';
+    apiName = 'restapi';
     path = '/backend';
     myInit = {
         headers: {},
@@ -95,6 +95,9 @@ class Contact extends Component {
                 console.log("in second THEN statement");
                 alert(items.success);
             })
+            .catch(err => {
+                console.log(err);
+            });
 
 
         }
