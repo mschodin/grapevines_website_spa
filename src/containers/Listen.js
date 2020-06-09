@@ -34,7 +34,6 @@ class Listen extends Component {
         }
         return(
             <div>
-                &nbsp;
                 <div className="section1" style={{ width: this.state.width * 0.5 }}>
                     <SpotifyPlayer uri="spotify:album:0rjC6lV3TrTwtjjZasTDGk" size={size} view='list' theme='black' style={player1}/>
                     <img src={require('../media/debbie-cover.jpg')} width={this.state.width * 0.3} alt='debbie-cover' />

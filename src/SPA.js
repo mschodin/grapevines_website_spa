@@ -6,12 +6,16 @@ import Section from "./containers/Section";
 import Tour from './containers/Tour';
 import Home from './containers/Home';
 import Listen from './containers/Listen';
+import Media from './containers/Media';
+import Contact from './containers/Contact';
 
 class SPA extends Component {
-  render() {
-    var homepage = <Home />;
-    var tourpage = <Tour />;
-    var listenpage = <Listen />;
+    render() {
+        var homepage = <Home />;
+        var tourpage = <Tour />;
+        var listenpage = <Listen />;
+        var mediapage = <Media />;
+        var contactpage = <Contact />;
     return (
       <div className="App">
         <Navbar />
@@ -31,12 +35,12 @@ class SPA extends Component {
           id="section3"
         />
         <Section
-          title="Section 4"
+          title={mediapage}
           dark={true}
           id="section4"
         />
         <Section
-          title="Section 5"
+          title={contactpage}
           dark={false}
           id="section5"
         />

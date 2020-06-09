@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
+import logo from "../media/Grapevines-circle.png";
+// import logo from "../media/Grapevines-logo-cropped.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 export default class Navbar extends Component {
@@ -18,6 +19,7 @@ export default class Navbar extends Component {
                 onClick={this.scrollToTop}
               />
               <ul className="nav-items">
+                
                 <li className="nav-item">
                   <Link
                     activeClass="active"
@@ -27,7 +29,7 @@ export default class Navbar extends Component {
                     offset={-70}
                     duration={500}
                   >
-                      Section 1
+                      Home
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -39,7 +41,7 @@ export default class Navbar extends Component {
                     offset={-70}
                     duration={500}
                   >
-                    Section 2
+                    Tour
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -51,7 +53,7 @@ export default class Navbar extends Component {
                     offset={-70}
                     duration={500}
                   >
-                    Section 3
+                    Listen
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -63,7 +65,7 @@ export default class Navbar extends Component {
                     offset={-70}
                     duration={500}
                   >
-                    Section 4
+                    Media
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -75,7 +77,7 @@ export default class Navbar extends Component {
                     offset={-70}
                     duration={500}
                   >
-                    Section 5
+                    Contact
                   </Link>
                 </li>
               </ul>

@@ -1,0 +1,74 @@
+form.contact {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  input[type=text]{
+    width: 300px;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right:auto;
+  }
+  
+  label{
+    display: inline-block;
+    margin-left:auto;
+    margin-right:auto;
+    width: 6em;
+    padding-top: 4%;
+    font-size: x-large;
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  /* button.contact {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+  } */
+
+  button.contact {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right:auto;
+  }
+  
+  button.contact:hover {
+    opacity: 0.8;
+  }
+
+  div.csection{
+      display: inline-flex;
+  }
+  
+  textarea{
+    width: 300px;
+    height: 150px;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+  }
