@@ -13,8 +13,57 @@ class Contact extends Component {
     }
 
     submitContact = (event) => {
-        if(this.state.name.length > 0 && this.state.email.length > 0 && this.state.message.length > 0){
-            alert("we can do stuff");
+        if (this.state.name.length > 0 && this.state.email.length > 0 && this.state.message.length > 0) {
+            // fetch('/backend', {
+            //     method: 'POST',
+            //     credentials: 'include',
+            //     headers: {
+            //         Accept: 'application/json',
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            //         item: this.state.requestItem,
+            //         amount: this.state.requestAmount,
+            //         location: this.state.requestLocation
+            //     })
+            // })
+            //     .then(res => {
+            //         if (res.status === 200) {
+            //             alert("Request submitted!");
+            //             this.updateDonationsAndRequests();
+            //             this.setState({
+            //                 requestAmount: '',
+            //                 requestItem: '',
+            //                 requestLocation: ''
+            //             });
+            //         } else {
+            //             const error = new Error(res.error);
+            //             throw error;
+            //         }
+            //     })
+            //     .catch(err => {
+            //         console.error(err);
+            //         alert("Error submitting request, please try again");
+            //         this.updateDonationsAndRequests();
+            //     });
+
+
+
+            fetch('/backend', {
+                method: 'GET',
+                credentials: 'include',
+            })
+                .then(res => {
+                    return res.json();
+                })
+                .then(items => {
+                    alert(items.success)
+                })
+                .catch(err => {
+                    alert("Error submitting donation requests");
+                });
+
+
         }
         else {
             alert("BLOCKED")
