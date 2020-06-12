@@ -43,8 +43,8 @@ class Contact extends Component {
             // const data = API.get('simple', '/simple');
             // console.log(data);
 
-            const apiName = 'restapi';
-            const path = '/backend';
+            const apiName = 'simple';
+            const path = '/simple';
             const myInit = {
                 body: JSON.stringify({
                     name: this.state.name,
