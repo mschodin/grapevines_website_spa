@@ -7,14 +7,12 @@ See the License for the specific language governing permissions and limitations 
 */
 
 
-/* Amplify Params - DO NOT EDIT
-	ENV
-	REGION
-Amplify Params - DO NOT EDIT */
+
 
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+var cors = require('cors')
 
 // declare a new express app
 var app = express()
@@ -23,22 +21,29 @@ app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://www.thegrapevinesband.com")
+  res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
   next()
 });
+
+options = {
+  origin: 'https://wwww.thegrapevinesband.com',
+  credentials: true,
+};
+
+app.use(cors(options));
+
 
 /**********************
  * Example get method *
  **********************/
 
-app.get('/backend', function(req, res) {
+app.get('/simple', cors(), function(req, res) {
   // Add your code here
-  res.header("Access-Control-Allow-Origin", "*")
   res.json({success: 'get call succeed!', url: req.url});
 });
 
-app.get('/backend/*', function(req, res) {
+app.get('/simple/*', function(req, res) {
   // Add your code here
   res.json({success: 'get call succeed!', url: req.url});
 });
@@ -47,12 +52,12 @@ app.get('/backend/*', function(req, res) {
 * Example post method *
 ****************************/
 
-app.post('/backend', function(req, res) {
+app.post('/simple', function(req, res) {
   // Add your code here
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
 
-app.post('/backend/*', function(req, res) {
+app.post('/simple/*', function(req, res) {
   // Add your code here
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
@@ -61,12 +66,12 @@ app.post('/backend/*', function(req, res) {
 * Example put method *
 ****************************/
 
-app.put('/backend', function(req, res) {
+app.put('/simple', function(req, res) {
   // Add your code here
   res.json({success: 'put call succeed!', url: req.url, body: req.body})
 });
 
-app.put('/backend/*', function(req, res) {
+app.put('/simple/*', function(req, res) {
   // Add your code here
   res.json({success: 'put call succeed!', url: req.url, body: req.body})
 });
@@ -75,12 +80,12 @@ app.put('/backend/*', function(req, res) {
 * Example delete method *
 ****************************/
 
-app.delete('/backend', function(req, res) {
+app.delete('/simple', function(req, res) {
   // Add your code here
   res.json({success: 'delete call succeed!', url: req.url});
 });
 
-app.delete('/backend/*', function(req, res) {
+app.delete('/simple/*', function(req, res) {
   // Add your code here
   res.json({success: 'delete call succeed!', url: req.url});
 });

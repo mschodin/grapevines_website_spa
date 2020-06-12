@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import "./Contact.css";
 import Amplify, { API } from 'aws-amplify';
-import awsconfig from '../aws-exports';
 
 class Contact extends Component {
 
@@ -18,90 +17,31 @@ class Contact extends Component {
 
     apiName = 'restapi';
     path = '/backend';
-    myInit = {
-        headers: {
-            Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        response: true
-    }
+    // myInit = {
+    //     headers: {
+    //         'Accept': 'application/json',
+    //       'Content-Type': 'application/json',
+    //     },
+    // }
 
     submitContact = (event) => {
         event.preventDefault();
         if (this.state.name.length > 0 && this.state.email.length > 0 && this.state.message.length > 0) {
-            // fetch('/backend', {
-            //     method: 'POST',
-            //     credentials: 'include',
-            //     headers: {
-            //         Accept: 'application/json',
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({
-            //         item: this.state.requestItem,
-            //         amount: this.state.requestAmount,
-            //         location: this.state.requestLocation
-            //     })
+            // API.get(this.apiName, this.path).then(response => {
+            //     console.log("in first THEN statement");
+            //     return response.json();
             // })
-            //     .then(res => {
-            //         if (res.status === 200) {
-            //             alert("Request submitted!");
-            //             this.updateDonationsAndRequests();
-            //             this.setState({
-            //                 requestAmount: '',
-            //                 requestItem: '',
-            //                 requestLocation: ''
-            //             });
-            //         } else {
-            //             const error = new Error(res.error);
-            //             throw error;
-            //         }
-            //     })
-            //     .catch(err => {
-            //         console.error(err);
-            //         alert("Error submitting request, please try again");
-            //         this.updateDonationsAndRequests();
-            //     });
-
-
-
-            // fetch('/backend', {
-            //     method: 'GET',
+            // .then(items => {
+            //     console.log("in second THEN statement");
+            //     alert(items.success);
             // })
-            //     .then(res => {
-            //         return res.json();
-            //     })
-            //     .then(items => {
-            //         alert(items.success)
-            //     })
-            //     .catch(err => {
-            //         console.log("/backend didnt work")
-            //     });
+            // .catch(err => {
+            //     console.log(err);
+            //     console.error(err);
+            // });
 
-            // fetch('https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev/backend', {
-            //     method: 'GET',
-            // })
-            //     .then(res => {
-            //         return res.json();
-            //     })
-            //     .then(items => {
-            //         alert(items.success)
-            //     })
-            //     .catch(err => {
-            //         console.log("https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev/backend didnt work")
-            //     });
-
-            API.get(this.apiName, this.path, this.myInit).then(response => {
-                console.log("in first THEN statement");
-                return response.json();
-            })
-            .then(items => {
-                console.log("in second THEN statement");
-                alert(items.success);
-            })
-            .catch(err => {
-                console.log(err);
-                console.error(err);
-            });
+            const data = API.get('restapi', '/simple');
+            console.log(data);
 
 
         }
@@ -111,7 +51,6 @@ class Contact extends Component {
     }
 
     render() {
-        Amplify.configure(awsconfig);
         return (
             <div>
                 <form onSubmit={this.submitContact} className="contact">

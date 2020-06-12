@@ -5,6 +5,11 @@
 			"providerPlugin": "awscloudformation",
 			"service": "Lambda",
 			"dependsOn": []
+		},
+		"simple": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda"
 		}
 	},
 	"auth": {
@@ -21,6 +26,20 @@
 				{
 					"category": "function",
 					"resourceName": "messages",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"simple": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "simple",
 					"attributes": [
 						"Name",
 						"Arn"

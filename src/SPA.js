@@ -10,7 +10,7 @@ import Media from './containers/Media';
 import Contact from './containers/Contact';
 import Amplify, { API } from 'aws-amplify';
 import awsconfig from './aws-exports';
-
+Amplify.configure(awsconfig);
 class SPA extends Component {
 
     render() {
@@ -19,7 +19,7 @@ class SPA extends Component {
         var listenpage = <Listen />;
         var mediapage = <Media />;
         var contactpage = <Contact />;
-        Amplify.configure(awsconfig);
+        
     return (
       <div className="App">
         <Navbar />

@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/simple",
+            "lambdaFunction": "simple",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "simple",
+    "apiName": "simple",
+    "functionArns": [
+        {
+            "lambdaFunction": "simple"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-grapevineswebsite-dev-130600-authRole",
+        "unAuthRoleName": "amplify-grapevineswebsite-dev-130600-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "simple",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

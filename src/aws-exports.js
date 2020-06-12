@@ -13,6 +13,11 @@ const awsmobile = {
             "name": "restapi",
             "endpoint": "https://0rmo0zh746.execute-api.us-east-2.amazonaws.com/dev",
             "region": "us-east-2"
+        },
+        {
+            "name": "simple",
+            "endpoint": "https://ry0o8uwwwj.execute-api.us-east-2.amazonaws.com/dev",
+            "region": "us-east-2"
         }
     ]
 };
