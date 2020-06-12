@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-grapevineswebsite-dev-130600-authRole",
+            "UnauthRoleArn": "arn:aws:iam::556922057268:role/amplify-grapevineswebsite-dev-130600-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::556922057268:role/amplify-grapevineswebsite-dev-130600-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-grapevineswebsite-dev-130600-deployment",
+            "UnauthRoleName": "amplify-grapevineswebsite-dev-130600-unauthRole",
+            "StackName": "amplify-grapevineswebsite-dev-130600",
+            "StackId": "arn:aws:cloudformation:us-east-2:556922057268:stack/amplify-grapevineswebsite-dev-130600/e07a6b40-aa7b-11ea-b989-023ebc410218",
+            "AmplifyAppId": "d3i9i3iukn3pjg"
+        },
+        "categories": {
+            "auth": {
+                "cognito99e160b5": {}
+            }
+        }
+    }
+}

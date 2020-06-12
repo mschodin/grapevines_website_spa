@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/backend",
+            "lambdaFunction": "messages",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "restapi",
+    "apiName": "restapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "messages"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-grapevineswebsite-dev-130600-authRole",
+        "unAuthRoleName": "amplify-grapevineswebsite-dev-130600-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "messages",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
