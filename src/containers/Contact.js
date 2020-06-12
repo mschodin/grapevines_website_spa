@@ -40,8 +40,35 @@ class Contact extends Component {
             //     console.error(err);
             // });
 
-            const data = API.get('simple', '/simple');
-            console.log(data);
+            // const data = API.get('simple', '/simple');
+            // console.log(data);
+
+            const apiName = 'restapi';
+            const path = '/backend';
+            const myInit = {
+                body: JSON.stringify({
+                    name: this.state.name,
+                    email: this.state.email,
+                    message: this.state.message
+                })
+            };
+
+            API.post(apiName, path, myInit).then(response => {
+                if( response.status === 200) { 
+                    this.setState({
+                        name: '',
+                        email: '',
+                        message: ''
+                    });
+                    alert("Thank you for the message!");
+                } else { 
+                    alert("Message failed: Please email thegrapevineguys@gmail.com directly");
+                }
+            })
+
+
+
+
 
 
         }

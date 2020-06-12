@@ -12,12 +12,7 @@
 			"service": "Lambda"
 		}
 	},
-	"auth": {
-		"cognito99e160b5": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation"
-		}
-	},
+	"auth": {},
 	"api": {
 		"restapi": {
 			"service": "API Gateway",

@@ -10,11 +10,6 @@
             "StackName": "amplify-grapevineswebsite-dev-130600",
             "StackId": "arn:aws:cloudformation:us-east-2:556922057268:stack/amplify-grapevineswebsite-dev-130600/e07a6b40-aa7b-11ea-b989-023ebc410218",
             "AmplifyAppId": "d3i9i3iukn3pjg"
-        },
-        "categories": {
-            "auth": {
-                "cognito99e160b5": {}
-            }
         }
     }
 }

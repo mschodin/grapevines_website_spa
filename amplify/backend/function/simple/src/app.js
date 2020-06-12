@@ -13,6 +13,7 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 var cors = require('cors')
+var nodemailer = require('nodemailer')
 
 // declare a new express app
 var app = express()
@@ -32,6 +33,18 @@ options = {
 };
 
 app.use(cors(options));
+
+
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'thegrapevineguys@gmail.com',
+    pass: 'buffalojoes'
+  }
+});
+
+
 
 /**********************
  * Example get method *
@@ -54,6 +67,28 @@ app.get('/simple/*', function(req, res) {
 
 app.post('/simple', function(req, res) {
   // Add your code here
+  const name = req.body.name;
+  const email = req.body.email;
+  const subject = 'Website submission';
+  const message = req.body.message;
+
+  var mailOpotions = {
+    from: 'thegrapevineguys@gmail.com',
+    to: 'thegrapevineguys@gmail.com',
+    subject: subject,
+    text: message
+  }  
+
+  res.header("Access-Control-Allow-Origin", "*");
+  transporter.sendMail(mailOpotions, function(error, info){
+    if ( error ) {
+      res.sendStatus(351);
+    } else {
+      res.sendStatus(200);
+    }
+  });
+
+
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
 

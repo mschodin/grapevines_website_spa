@@ -3,11 +3,6 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-2",
-    "aws_cognito_identity_pool_id": "us-east-2:dd35e037-7ffd-4bdd-996f-e252a5115a4e",
-    "aws_cognito_region": "us-east-2",
-    "aws_user_pools_id": "us-east-2_BALNzLJLy",
-    "aws_user_pools_web_client_id": "6r8ht1nq8qatmhk17f6cv5ctmq",
-    "oauth": {},
     "aws_cloud_logic_custom": [
         {
             "name": "restapi",
