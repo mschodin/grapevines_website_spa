@@ -40,7 +40,7 @@ class Contact extends Component {
             //     console.error(err);
             // });
 
-            const data = API.get('restapi', '/simple');
+            const data = API.get('simple', '/simple');
             console.log(data);
 
 

@@ -33,13 +33,13 @@ options = {
 
 app.use(cors(options));
 
-
 /**********************
  * Example get method *
  **********************/
 
 app.get('/simple', cors(), function(req, res) {
   // Add your code here
+  res.header("Access-Control-Allow-Origin", "*");
   res.json({success: 'get call succeed!', url: req.url});
 });
 
