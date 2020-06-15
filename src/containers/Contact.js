@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./Contact.css";
-import Amplify, { API } from 'aws-amplify';
+import { API } from 'aws-amplify';
 
 class Contact extends Component {
 
@@ -13,71 +13,37 @@ class Contact extends Component {
         };
     }
 
-    
-
-    apiName = 'restapi';
-    path = '/backend';
-    // myInit = {
-    //     headers: {
-    //         'Accept': 'application/json',
-    //       'Content-Type': 'application/json',
-    //     },
-    // }
-
-    submitContact = (event) => {
+    submitContact = async(event) => {
         event.preventDefault();
         if (this.state.name.length > 0 && this.state.email.length > 0 && this.state.message.length > 0) {
-            // API.get(this.apiName, this.path).then(response => {
-            //     console.log("in first THEN statement");
-            //     return response.json();
-            // })
-            // .then(items => {
-            //     console.log("in second THEN statement");
-            //     alert(items.success);
-            // })
-            // .catch(err => {
-            //     console.log(err);
-            //     console.error(err);
-            // });
+            
+            var message = {
+                name: this.state.name,
+                email: this.state.email,
+                message: this.state.message
+            }
 
-            // const data = API.get('simple', '/simple');
-            // console.log(data);
-
-            // const apiName = 'simple';
-            // const path = '/simple';
             const myInit = {
-                body: JSON.stringify({
-                    name: this.state.name,
-                    email: this.state.email,
-                    message: this.state.message
-                })
+                body: {
+                    object: message
+                }
             };
 
-            // API.post('simple', '/simple', myInit).then(response => {
-            //     if( response.status === 200) { 
-            //         this.setState({
-            //             name: '',
-            //             email: '',
-            //             message: ''
-            //         });
-            //         alert("Thank you for the message!");
-            //     } else { 
-            //         alert("Message failed: Please email thegrapevineguys@gmail.com directly");
-            //     }
-            // })
-
-            const data = API.post('simple', '/simple', myInit);
+            var data = await API.post('simple', '/simple', myInit);
             console.log(data);
-            console.log("$$$$$: ", data.status);
-
-
-
-
-
-
+            if(data.message == "Success"){
+                alert("Message sent successfully: Thank you!");
+                this.setState({
+                    name: '',
+                    email: '',
+                    message: ''
+                });
+            } else {
+                alert("Error sending message, please try again or contact thegrapevineguys@gmail.com directly!");
+            }
         }
         else {
-            alert("BLOCKED")
+            alert("Please fill the text boxes below!");
         }
     }
 
