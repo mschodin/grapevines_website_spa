@@ -65,7 +65,7 @@ app.get('/simple/*', function(req, res) {
 * Example post method *
 ****************************/
 
-app.post('/simple', function(req, res) {
+app.post('/simple', cors(), function(req, res) {
   // Add your code here
   const name = req.body.name;
   const email = req.body.email;

@@ -53,7 +53,7 @@ class Contact extends Component {
                 })
             };
 
-            API.post(apiName, path, myInit).then(response => {
+            API.post('simple', '/simple', myInit).then(response => {
                 if( response.status === 200) { 
                     this.setState({
                         name: '',
