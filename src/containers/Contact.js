@@ -43,8 +43,8 @@ class Contact extends Component {
             // const data = API.get('simple', '/simple');
             // console.log(data);
 
-            const apiName = 'simple';
-            const path = '/simple';
+            // const apiName = 'simple';
+            // const path = '/simple';
             const myInit = {
                 body: JSON.stringify({
                     name: this.state.name,
@@ -53,18 +53,22 @@ class Contact extends Component {
                 })
             };
 
-            API.post('simple', '/simple', myInit).then(response => {
-                if( response.status === 200) { 
-                    this.setState({
-                        name: '',
-                        email: '',
-                        message: ''
-                    });
-                    alert("Thank you for the message!");
-                } else { 
-                    alert("Message failed: Please email thegrapevineguys@gmail.com directly");
-                }
-            })
+            // API.post('simple', '/simple', myInit).then(response => {
+            //     if( response.status === 200) { 
+            //         this.setState({
+            //             name: '',
+            //             email: '',
+            //             message: ''
+            //         });
+            //         alert("Thank you for the message!");
+            //     } else { 
+            //         alert("Message failed: Please email thegrapevineguys@gmail.com directly");
+            //     }
+            // })
+
+            const data = API.post('simple', '/simple', myInit);
+            console.log(data);
+            console.log("$$$$$: ", data.status);
 
 
 

@@ -22,12 +22,12 @@ app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-  next()
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
-options = {
+var options = {
   origin: 'https://wwww.thegrapevinesband.com',
   credentials: true,
 };
@@ -77,7 +77,7 @@ app.post('/simple', cors(), function(req, res) {
     to: 'thegrapevineguys@gmail.com',
     subject: subject,
     text: message
-  }  
+  };
 
   res.header("Access-Control-Allow-Origin", "*");
   transporter.sendMail(mailOpotions, function(error, info){
@@ -89,7 +89,7 @@ app.post('/simple', cors(), function(req, res) {
   });
 
 
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  res.json({success: 'post call succeed!', url: req.url, body: req.body});
 });
 
 app.post('/simple/*', function(req, res) {

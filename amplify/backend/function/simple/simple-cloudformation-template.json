@@ -68,7 +68,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-grapevineswebsite-dev-130600-deployment",
-					"S3Key": "amplify-builds/simple-706e4d466b42474c7a6b-build.zip"
+					"S3Key": "amplify-builds/simple-52586679344956786d4e-build.zip"
 				}
 			}
 		},
