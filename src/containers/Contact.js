@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./Contact.css";
 import { API } from 'aws-amplify';
+import ReCAPTCHA from "react-google-recaptcha";
 
 class Contact extends Component {
 
@@ -9,9 +10,11 @@ class Contact extends Component {
         this.state = {
             name: '',
             email: '',
-            message: ''
+            message: '',
+            recaptcha: ''
         };
     }
+
 
     submitContact = async(event) => {
         event.preventDefault();
@@ -31,7 +34,7 @@ class Contact extends Component {
 
             var data = await API.post('simple', '/simple', myInit);
             console.log(data);
-            if(data.message == "Success"){
+            if(data.message === "Success"){
                 alert("Message sent successfully: Thank you!");
                 this.setState({
                     name: '',
@@ -45,6 +48,13 @@ class Contact extends Component {
         else {
             alert("Please fill the text boxes below!");
         }
+    }
+
+    onChange = (value) => {
+        this.setState({
+            recaptcha: value
+        });
+        console.log("CAPTCHA VALUE: ", value);
     }
 
     render() {
@@ -67,6 +77,10 @@ class Contact extends Component {
                         <div className="csection">
                             <label><b>Message:</b></label>
                             <textarea name="message" type="text" value={this.state.message} onChange={e => this.setState({ message: e.target.value })} />
+                        </div>
+
+                        <div className="csection">
+                            <ReCAPTCHA sitekey="6Lftj6UZAAAAAN5XGsh0xouL1AVIR0RVR4bFYh8i" onChange={this.onChange} />
                         </div>
 
                         <div className="csection">
